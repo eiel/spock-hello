@@ -73,11 +73,12 @@ script:
   esac
 before_deploy:
 - stack install
+- "gzip $HOME/.local/bin/spock-hello-exe"
 deploy:
   provider: releases
   api_key:
     secure: cOmabNnVtxq+j+ZXvwW6uAoSlSMS4DG14f7K3uweIss1FfoDQaeHL/0w+EhYJNDh2HX3KwSNDQEvJDyJYlPgp4iKqCG0U+nl/h/do2AUXLmWSNPBvRoE5/76XQjLAv+4Cg+i62MlcMESItNcLDTaCvYVwCItZltBo9f47NDFBNDW/sRhBzOm62OAdoaEXtJ5RcGqceJL0eUTCPxSHAHS6X14jA8lInsz1pCsZkeCodpvDVXbji4ZDDiLZnzPynrK67wwSz0sX4AuQtk6XSytg6ffBLbRolUFsGSRC9Mv4XWG4ukvzKxvClbb18PvAPzYC1Av6LuvctQOASr93IUldksBc+sMGRrC9KKIos5WAe6qLYq2LppyU6w7xISTl6VWKO9TUxS4OTcC5fL2AYtQyRwNhV0nm9fo9fH2h8q11uNMPTz+e8AuyjwvO8mXLA6B8UPHe0B3hz52JVFFfdaRAzpmEcF2KRq/RL+UmATSG2WZSkoWNI3T+E8F+QBWJ5/so7RGZpyoi+8LgPFuCn2tACc0HorG5K7/qMF8l1vmkRiSGaJyaRvDPLm4hwHi1lUstivnAqbZ8cUBuGMzRnwvK+PTPJmBDQol8oHKMb/IxEBrenbPO2X0keZJ9nLPeszka1/1yqzEuB84OgxKif9pNSRnrcba/k51rLFkIRMzKpQ=
-  file: "$HOME/.local/bin/spock-hello-exe"
+  file: "$HOME/.local/bin/spock-hello-exe.gz"
   on:
     repo: eiel/spock-hello
     tags: true
