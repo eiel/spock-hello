@@ -8,4 +8,8 @@ main :: IO ()
 main = runSpock 8080 $ spockT id app
 
 app :: SpockCtxT m IO ()
-app = get root $ text "Hello World!"
+app = do
+  get root $ text "Hello World!!!"
+  get ("_ah" <//> "start") $ text ""
+  get ("_ah" <//> "stop") $ text ""
+  get ("_ah" <//> "health") $ text ""
